@@ -2,6 +2,8 @@
 const container=document.querySelector(".container");
 const buttons = document.querySelectorAll(".click-button");
 var textArea = document.querySelector("#input");
+const clearBtn=document.querySelector("#clearButton");
+const delBtn=document.querySelector("#delButton");
 //calculator functions
 let add=(a,b)=>{
     return a+b;
@@ -44,7 +46,16 @@ buttons.forEach((button) => {
         textArea.value+=buttonText;
     });
 });
-
+//when clrBtn is clicked
+clearBtn.addEventListener("click",()=>{
+    console.log("i have cleared");
+    textArea.value="";
+});
+//when dltBtn is clicked
+delBtn.addEventListener("click",()=>{
+    console.log("i have deleted");
+    textArea.value=textArea.value.slice(0,-1);
+});
 //when equal button is clicked
 //when operators is clicked
 
