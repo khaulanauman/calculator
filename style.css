@@ -5,11 +5,14 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Coda Caption";
+    font-family: "Annie Use Your Telescope";
     border: 5px solid pink;
+    background-image: url("background.jpg");
 }
 #welcome{
-    font-size: 20px;
+   color: white;
+   background-color: black;
+   border-radius: 20px;
     font-weight: bold;
     border: 5px solid blue;
 }
