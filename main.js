@@ -1,18 +1,8 @@
 "use strict"
 const container=document.querySelector(".container");
-
-window.onload=makeButt();
-function makeButt(){
-    var numberButtons=Array();
-    for(let i=0;i<10;i++){
-        const button=document.createElement("button");
-        numberButtons[i]=button;
-        button.textContent=i;
-        button.style.backgroundColor="#505050";
-        button.style.color="white";
-        container.appendChild(button);
-    }
-}
+const buttons = document.querySelectorAll(".click-button");
+var textArea = document.querySelector("#input");
+//calculator functions
 let add=(a,b)=>{
     return a+b;
 }
@@ -45,10 +35,19 @@ let operate = (operator,a,b)=>{
           alert("Please enter a valid choice");
      }
 }
-/* operate(operator,a,b); */
-//one array for number buttons
-//one array for function buttons
-//declare each function
+//when num buttons and functions are clicked
+buttons.forEach((button) => {
+    button.addEventListener("click",()=>{
+        console.log("i am clicked");
+        var buttonText=button.textContent;
+        console.log(buttonText);
+        textArea.value+=buttonText;
+    });
+});
+
+//when equal button is clicked
+//when operators is clicked
+
 
 
 
