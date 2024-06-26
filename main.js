@@ -6,7 +6,6 @@ const clearBtn=document.querySelector("#clearButton");
 const delBtn=document.querySelector("#delButton");
 const equalBtn = document.querySelector("#equalButton");
 var displayValue="";
-//finding the index of operator
 
 
 //calculator functions
@@ -17,7 +16,14 @@ let subtract=(a,b)=>{
     return a-b;
 }
 let divide=(a,b)=>{
-    return a/b;
+    if(b==0){
+        alert("Seriously? Dividing by zero: what are you , 8?");
+        return displayValue;
+    }
+    else{
+        return a/b;
+    }
+    
 }
 let multiply=(a,b)=>{
     return a*b;
@@ -67,6 +73,9 @@ delBtn.addEventListener("click",()=>{
     textArea.value=displayValue;
 });
 //when equal button is clicked
+let previousValue;
+let currentValue;
+let currentOperator;
 equalBtn.addEventListener("click",()=>{
     let index;
     var operator;
@@ -74,12 +83,12 @@ equalBtn.addEventListener("click",()=>{
     if(displayValue.charAt(i)=='+'||displayValue.charAt(i)=='-'||displayValue.charAt(i)=='X'||displayValue.charAt(i)=='÷'){
         index=i;
         operator=displayValue.charAt(i);
+        currentOperator=operator;
         break;
         
     }    
 }
     let a=parseFloat(displayValue.substring(0,index));
-
     let b =parseFloat(displayValue.substring(index+1,displayValue.length));
     console.log("i am a"+a);
     console.log("i am b"+b);
